@@ -82,8 +82,9 @@ sound.addEventListener('click', async () => {
 
 function updateClock(seconds) {
   const display = Math.ceil(Math.max(0, seconds));
-  clock.textContent = [Math.floor(display / 60), display % 60]
+  const text = [Math.floor(display / 60), display % 60]
     .map(part => String(part).padStart(2, '0')).join(':');
+  if (clock.textContent !== text) clock.textContent = text;
 }
 
 function reset() {
@@ -95,16 +96,24 @@ function reset() {
   toggle.textContent = 'Pradėti seansą';
   duration.disabled = false;
   orb.style.removeProperty('--scale');
-  updateClock(Number(duration.value) * 60);
+  updateClock(sessionLength());
+}
+
+function cycleLength() {
+  return current.phases.reduce((sum, step) => sum + step[1], 0);
+}
+
+function sessionLength(lap = cycleLength()) {
+  const target = Number(duration.value) * 60;
+  // Choose the closest duration that ends on a full breathing cycle.
+  return Math.round(target / lap) * lap;
 }
 
 function tick(now) {
-  const total = Number(duration.value) * 60;
   const time = elapsed + (now - started) / 1000;
   const phases = current.phases;
-  const lap = phases.reduce((sum, step) => sum + step[1], 0);
-  // Finish each breathing cycle before ending the session.
-  const end = Math.ceil(total / lap) * lap;
+  const lap = cycleLength();
+  const end = sessionLength(lap);
   updateClock(end - time);
   if (time >= end) {
     state = 'done';
