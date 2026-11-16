@@ -1,7 +1,7 @@
 const inhale = 'Įkvėpk';
 const exhale = 'Iškvėpk';
 const hold = 'Sulaikyk';
-const yogaSource = 'https://yoga.ayush.gov.in/YAP/PDF/Common%20Yoga%20Protocol%20Book-English.pdf';
+const yogaSource = 'https://www.yogamdniy.nic.in/files/pdf/CYP-2023-English.pdf';
 const movementSource = 'https://www.asthmaandlung.org.uk/living-with/keeping-active/keep-active-programme/managing-breathlessness';
 const practices = [
   { name: 'Tolygus kvėpavimas', label: 'Coherent breathing · 5–5', category: 'Ramybė',
