@@ -1,7 +1,7 @@
 # Thompson Breathwork
 
-Telefonui pritaikyta lietuviška kvėpavimo praktikų programėlė. Joje yra vedami ritmai, kvėpavimo stebėjimo meditacija ir pažengusiųjų praktikų aprašai.
+A mobile-friendly app with guided breathing sessions, breath awareness meditation, and a library of 16 practices.
 
-Atverkite `index.html` naršyklėje arba šio katalogo viduje paleiskite `python3 -m http.server 8765` ir atverkite `http://localhost:8765/`. Diegiant per „GitHub Pages“ naudojama šaka `main` ir šakninis katalogas.
+Open `index.html` in a browser, or run `python3 -m http.server 8765` from this directory and visit `http://localhost:8765/`. GitHub Pages serves the root directory of the `main` branch.
 
-Vedamas seansas baigiasi užbaigus paskutinį kvėpavimo ciklą. Išėjus iš naršyklės kortelės seansas pristabdomas.
+Guided sessions end after a full breathing cycle. Switching away from the browser tab pauses the session.

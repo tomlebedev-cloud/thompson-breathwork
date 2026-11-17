@@ -1,76 +1,76 @@
-const inhale = 'Įkvėpk';
-const exhale = 'Iškvėpk';
-const hold = 'Sulaikyk';
+const inhale = 'Inhale';
+const exhale = 'Exhale';
+const hold = 'Hold';
 const yogaSource = 'https://www.yogamdniy.nic.in/files/pdf/CYP-2023-English.pdf';
 const movementSource = 'https://www.asthmaandlung.org.uk/living-with/keeping-active/keep-active-programme/managing-breathlessness';
 const practices = [
-  { name: 'Tolygus kvėpavimas', label: 'Coherent breathing · 5–5', category: 'Ramybė',
-    description: 'Vienodos trukmės įkvėpimas ir iškvėpimas sudaro lėtą, pastovų ritmą.',
+  { name: 'Coherent Breathing', label: 'Equal breathing · 5–5', category: 'Calm',
+    description: 'Equal-length inhales and exhales create a slow, steady rhythm.',
     phases: [[inhale, 5, 1.14], [exhale, 5, .87]],
-    instruction: 'Kvėpuok ramiai ir skirk tiek pat laiko įkvėpimui ir iškvėpimui.' },
-  { name: 'Kvėpavimas kvadratu', label: 'Box breathing · 4–4–4–4', category: 'Dėmesys',
-    description: 'Įkvėpimas, pauzė, iškvėpimas ir dar viena pauzė trunka vienodai.',
+    instruction: 'Breathe gently, taking the same amount of time to inhale and exhale.' },
+  { name: 'Box Breathing', label: 'Four equal phases · 4–4–4–4', category: 'Focus',
+    description: 'Inhale, hold, exhale, and hold again for the same amount of time.',
     phases: [[inhale, 4, 1.14], [hold, 4, 1.14], [exhale, 4, .87], [hold, 4, .87]],
-    instruction: 'Laikyk pauzes tik tiek, kiek patogu. Jei jos kelia įtampą, rinkis tolygų kvėpavimą.' },
-  { name: 'Ilgesnis iškvėpimas', label: 'Lengvas ritmas · 3–5', category: 'Ramybė',
-    description: 'Iškvėpimui skiriama daugiau laiko, o tarp fazių kvėpavimas nesulaikomas.',
+    instruction: 'Hold only as long as feels comfortable. If the holds feel strained, try coherent breathing.' },
+  { name: 'Extended Exhale', label: 'Gentle pace · 3–5', category: 'Calm',
+    description: 'Exhale for longer than you inhale, with no holds between breaths.',
     phases: [[inhale, 3, 1.14], [exhale, 5, .87]],
-    instruction: 'Įkvėpk švelniai ir leisk iškvėpimui užtrukti truputį ilgiau.' },
-  { name: 'Diafragminis kvėpavimas', label: 'Belly breathing · 3–4', category: 'Atsigavimas',
-    description: 'Dėmesys skiriamas švelniam pilvo judesiui kvėpuojant.',
+    instruction: 'Inhale gently and let your exhale last a little longer.' },
+  { name: 'Diaphragmatic Breathing', label: 'Belly breathing · 3–4', category: 'Recovery',
+    description: 'Focus on the gentle movement of your belly as you breathe.',
     phases: [[inhale, 3, 1.14], [exhale, 4, .87]],
-    instruction: 'Atpalaiduok pečius. Įkvepiant leisk pilvui švelniai pakilti, o iškvepiant – nusileisti.' },
-  { name: 'Ciklinis atodūsis', label: 'Cyclic sighing · 2–1–5', category: 'Ramybė',
-    description: 'Vieną atodūsį sudaro du švelnūs įkvėpimai ir vienas ilgesnis iškvėpimas.',
-    phases: [[inhale, 2, 1.06], ['Trumpai įkvėpk', 1, 1.14], [exhale, 5, .87]],
-    instruction: 'Po pirmo įkvėpimo švelniai įkvėpk dar truputį, tada lėtai iškvėpk.' },
-  { name: 'Iškvėpimas pro sučiauptas lūpas', label: 'Pursed-lip breathing · 2–4', category: 'Atsigavimas',
-    description: 'Lengvai sučiauptos lūpos padeda iškvėpti lėčiau.',
+    instruction: 'Relax your shoulders. Let your belly gently rise as you inhale and fall as you exhale.' },
+  { name: 'Cyclic Sighing', label: 'Double inhale · 2–1–5', category: 'Calm',
+    description: 'Each sigh consists of two gentle inhales and one longer exhale.',
+    phases: [[inhale, 2, 1.06], ['Inhale a little more', 1, 1.14], [exhale, 5, .87]],
+    instruction: 'After your first inhale, gently breathe in a little more, then exhale slowly.' },
+  { name: 'Pursed-Lip Breathing', label: 'Slow exhale · 2–4', category: 'Recovery',
+    description: 'Breathing out through gently pursed lips slows the exhale.',
     phases: [[inhale, 2, 1.14], [exhale, 4, .87]],
-    instruction: 'Įkvėpk pro nosį. Lėtai iškvėpk pro lengvai sučiauptas lūpas.' },
-  { name: 'Kvėpavimas 4–7–8', label: 'Ritmas su pauze · 4–7–8', category: 'Ramybė', minutes: 1,
-    description: 'Skaičiuojama iki keturių įkvepiant, iki septynių per pauzę ir iki aštuonių iškvepiant.',
+    instruction: 'Inhale through your nose. Exhale slowly through gently pursed lips.' },
+  { name: '4–7–8 Breathing', label: 'Breath-hold rhythm · 4–7–8', category: 'Calm', minutes: 1,
+    description: 'Inhale for four counts, hold for seven, and exhale for eight.',
     phases: [[inhale, 4, 1.14], [hold, 7, 1.14], [exhale, 8, .87]],
-    instruction: 'Švelniai įkvėpk, patogiai išlaikyk pauzę ir lėtai iškvėpk. Jei pauzė per ilga, sustok.' },
-  { name: 'Kvėpavimo stebėjimas', label: 'Meditacija · natūralus ritmas', category: 'Dėmesys',
-    description: 'Meditacija, kurios metu pastebi natūralų kvėpavimą ir prie jo grąžini dėmesį.',
-    phases: [['Stebėk kvėpavimą', 60, 1]],
-    instruction: 'Pastebėk, kaip oras įteka ir išteka. Kai mintys nuklysta, švelniai grįžk prie kvėpavimo.' },
-  { name: 'Nadi Shodhana', label: 'Pakaitinis kvėpavimas pro šnerves', category: 'Dėmesys', tradition: 'Pranajama',
-    description: 'Įkvepiama per vieną šnervę, iškvepiama per kitą, tada kryptis apsukama.',
-    phases: [['Įkvėpk kaire', 4, 1.14], ['Iškvėpk dešine', 4, .87],
-      ['Įkvėpk dešine', 4, 1.14], ['Iškvėpk kaire', 4, .87]],
-    instruction: 'Švelniai pridengk kitą šnervę. Keisk pusę pagal užrašą ir kvėpuok be pauzių.',
+    instruction: 'Inhale gently, hold comfortably, and exhale slowly. Stop if the hold feels too long.' },
+  { name: 'Breath Awareness', label: 'Meditation · natural rhythm', category: 'Focus',
+    description: 'A meditation that brings your attention back to your natural breath.',
+    phases: [['Notice your breath', 60, 1]],
+    instruction: 'Notice the air moving in and out. If your mind wanders, gently return your attention to your breath.' },
+  { name: 'Nadi Shodhana', label: 'Alternate nostril breathing', category: 'Focus', tradition: 'Pranayama',
+    description: 'Inhale through one nostril, exhale through the other, then reverse.',
+    phases: [['Inhale left', 4, 1.14], ['Exhale right', 4, .87],
+      ['Inhale right', 4, 1.14], ['Exhale left', 4, .87]],
+    instruction: 'Gently close the opposite nostril. Switch sides as prompted and breathe without pauses.',
     source: 'https://health.clevelandclinic.org/alternate-nostril-breathing' },
-  { name: 'Bhramari', label: 'Bitės dūzgimas', category: 'Ramybė', tradition: 'Pranajama',
-    description: 'Iškvepiant užčiaupus burną tyliai dūzgiama.',
-    phases: [[inhale, 3, 1.14], ['Iškvėpk dūgzdamas', 5, .87]],
-    instruction: 'Įkvėpk pro nosį. Iškvėpdamas tyliai tęsk garsą „mmm“, kol patogu.',
+  { name: 'Bhramari', label: 'Humming bee breath', category: 'Calm', tradition: 'Pranayama',
+    description: 'Make a soft humming sound as you exhale with your mouth closed.',
+    phases: [[inhale, 3, 1.14], ['Hum as you exhale', 5, .87]],
+    instruction: 'Inhale through your nose, then softly hum “mmm” as you exhale for as long as feels comfortable.',
     source: yogaSource },
-  { name: 'Sitali', label: 'Vėsinantis kvėpavimas', category: 'Pranajama',
-    description: 'Įkvepiama pro į vamzdelį susuktą liežuvį, o iškvepiama pro nosį.',
-    phases: [['Įkvėpk pro burną', 3, 1.14], ['Iškvėpk pro nosį', 4, .87]],
-    instruction: 'Jei gali patogiai susukti liežuvį, įkvėpk pro jį. Iškvėpdamas atpalaiduok liežuvį.',
+  { name: 'Sitali', label: 'Cooling breath', category: 'Pranayama',
+    description: 'Inhale through your curled tongue and exhale through your nose.',
+    phases: [['Inhale through mouth', 3, 1.14], ['Exhale through nose', 4, .87]],
+    instruction: 'If you can comfortably curl your tongue, inhale through it. Relax your tongue as you exhale.',
     source: yogaSource },
-  { name: 'Kvėpavimas pagal žingsnius', label: 'Ritmas judant', category: 'Atsigavimas',
-    description: 'Kvėpavimas derinamas prie žingsnių einant ar lipant laiptais.',
-    instruction: 'Derink kvėpavimą su patogiu ėjimo tempu. Pavyzdžiui, įkvėpk per vieną žingsnį ir iškvėpk per du, jei taip kvėpuoti patogu.',
+  { name: 'Step-Paced Breathing', label: 'Breathing during movement', category: 'Recovery',
+    description: 'Match your breathing to your steps as you walk or climb stairs.',
+    instruction: 'Match your breathing to a comfortable walking pace. For example, inhale for one step and exhale for two if that feels comfortable.',
     source: movementSource },
-  { name: 'Iškvėpimas per pastangą', label: 'Blow as you go', category: 'Atsigavimas',
-    description: 'Iškvepiama per sunkiausią judesio dalį, pavyzdžiui, stojantis nuo kėdės.',
-    instruction: 'Įkvėpk prieš pradėdamas judesį. Atlikdamas sunkiausią jo dalį švelniai iškvėpk.',
+  { name: 'Exhale on Effort', label: 'Blow as you go', category: 'Recovery',
+    description: 'Breathe out during the hardest part of a movement, such as rising from a chair.',
+    instruction: 'Inhale before you move. Gently exhale through the hardest part of the movement.',
     source: movementSource },
-  { name: 'Kapalabhati', label: 'Tradicinė jogos technika', category: 'Pažengusiems', tradition: 'Pranajama',
-    description: 'Aktyvūs, trumpi iškvėpimai kaitaliojami su savaiminiais įkvėpimais.',
-    instruction: 'Technika dažnai mokoma kaip jogos valomoji praktika. Dėl staigių iškvėpimų ir intensyvumo ją mokykis su patyrusiu jogos instruktoriumi.',
+  { name: 'Kapalabhati', label: 'Traditional yoga technique', category: 'Advanced', tradition: 'Pranayama',
+    description: 'Short, active exhales alternate with passive inhales.',
+    instruction: 'Traditionally taught as a yogic cleansing practice. Learn with an experienced yoga instructor because of the sharp exhales and intensity.',
     source: yogaSource },
-  { name: 'Tummo', label: 'Tibeto meditacijos tradicija', category: 'Pažengusiems',
-    description: 'Tibeto meditacijoje kvėpavimas derinamas su kūno technika ir vizualizacija.',
-    instruction: 'Tibeto meditacijos praktika, jungianti kvėpavimą, kūno techniką ir vizualizaciją. Intensyvią techniką mokykis su patyrusiu mokytoju.',
+  { name: 'Tummo', label: 'Tibetan meditation tradition', category: 'Advanced',
+    description: 'A Tibetan meditation that combines breath, physical techniques, and visualization.',
+    instruction: 'This Tibetan meditation combines breath, physical techniques, and visualization. Learn the intensive technique with an experienced teacher.',
     source: 'https://doi.org/10.1371/journal.pone.0058244' },
-  { name: 'Wim Hof metodas', label: 'Intensyvi kvėpavimo praktika', category: 'Pažengusiems',
-    description: 'Intensyvi praktika, kurioje greitesnis kvėpavimas kaitaliojamas su sulaikymu.',
-    instruction: 'Metodo kvėpavimo dalis apima greitesnį kvėpavimą ir sulaikymą. Galimas galvos svaigimas ar sąmonės netekimas. Praktikos nedaryk vandenyje, šalia vandens ar vairuodamas.',
+  { name: 'Wim Hof Method', label: 'Intensive breathwork', category: 'Advanced',
+    description: 'An intensive practice that alternates faster breathing with breath holds.',
+    instruction: 'The breathing component involves faster breathing and breath holds. Dizziness or loss of consciousness can occur. Never practice in or near water or while driving.',
     source: 'https://www.wimhofmethod.com/faq' },
 ];
 
@@ -84,7 +84,7 @@ const sound = byId('sound');
 const cards = byId('cards');
 const filters = byId('filters');
 let current = practices[0];
-let category = 'Visi';
+let category = 'All';
 let state = 'idle';
 let elapsed = 0;
 let started = 0;
@@ -113,10 +113,10 @@ sound.addEventListener('click', async () => {
     }
     soundOn = !soundOn;
     sound.setAttribute('aria-pressed', soundOn);
-    sound.textContent = soundOn ? 'Garsas įjungtas' : 'Garsas išjungtas';
+    sound.textContent = soundOn ? 'Sound on' : 'Sound off';
     tone();
   } catch {
-    sound.textContent = 'Garsas nepasiekiamas';
+    sound.textContent = 'Sound unavailable';
   }
 });
 
@@ -132,8 +132,8 @@ function reset() {
   state = 'idle';
   elapsed = 0;
   lastPhase = -1;
-  phase.textContent = 'Pasiruošk';
-  toggle.textContent = 'Pradėti seansą';
+  phase.textContent = 'Get ready';
+  toggle.textContent = 'Start session';
   duration.disabled = false;
   orb.style.removeProperty('--scale');
   updateClock(sessionLength());
@@ -158,8 +158,8 @@ function tick(now) {
   if (time >= end) {
     state = 'done';
     duration.disabled = false;
-    phase.textContent = 'Seansas baigtas';
-    toggle.textContent = 'Pradėti iš naujo';
+    phase.textContent = 'Session complete';
+    toggle.textContent = 'Start again';
     orb.style.removeProperty('--scale');
     tone();
     return;
@@ -187,8 +187,8 @@ function pause() {
   elapsed += (performance.now() - started) / 1000;
   cancelAnimationFrame(frame);
   state = 'paused';
-  phase.textContent = 'Pauzė';
-  toggle.textContent = 'Tęsti seansą';
+  phase.textContent = 'Paused';
+  toggle.textContent = 'Resume session';
 }
 
 toggle.addEventListener('click', () => {
@@ -201,7 +201,7 @@ toggle.addEventListener('click', () => {
   lastPhase = -1;
   started = performance.now();
   duration.disabled = true;
-  toggle.textContent = 'Pristabdyti';
+  toggle.textContent = 'Pause';
   tick(started);
 });
 
@@ -237,7 +237,7 @@ function showPractice(practice) {
 }
 
 function renderCards() {
-  const visible = practices.filter(practice => category === 'Visi' || practice.category === category ||
+  const visible = practices.filter(practice => category === 'All' || practice.category === category ||
     practice.tradition === category);
   cards.replaceChildren(...visible.map(practice => {
     const card = document.createElement('button');
@@ -254,7 +254,7 @@ function renderCards() {
     label.textContent = practice.label;
     description.textContent = practice.description;
     description.className = 'description';
-    action.textContent = practice.phases ? 'Pasirinkti →' : 'Apie praktiką ↗';
+    action.textContent = practice.phases ? 'Select →' : 'About this practice ↗';
     action.className = 'action';
     card.append(tag, name, label, description, action);
     card.addEventListener('click', () => showPractice(practice));
@@ -262,7 +262,7 @@ function renderCards() {
   }));
 }
 
-for (const label of ['Visi', 'Ramybė', 'Dėmesys', 'Atsigavimas', 'Pranajama', 'Pažengusiems']) {
+for (const label of ['All', 'Calm', 'Focus', 'Recovery', 'Pranayama', 'Advanced']) {
   const button = document.createElement('button');
   button.type = 'button';
   button.textContent = label;

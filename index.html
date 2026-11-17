@@ -1,32 +1,32 @@
 <!doctype html>
-<html lang="lt">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080d20">
-<meta name="description" content="Vedami kvėpavimo seansai ir kvėpavimo praktikų biblioteka.">
+<meta name="description" content="Guided breathing sessions and a library of breathwork practices.">
 <title>Thompson Breathwork</title>
 <link rel="stylesheet" href="./style.css">
 <script src="./app.js" defer></script>
 </head>
 <body>
-<header class="bar"><div class="wrap top"><a class="brand" href="./"><span class="mark" aria-hidden="true">≋</span><span>THOMPSON <b>BREATHWORK</b></span></a><a href="#biblioteka">Pratimai</a></div></header>
+<header class="bar"><div class="wrap top"><a class="brand" href="./"><span class="mark" aria-hidden="true">≋</span><span>THOMPSON <b>BREATHWORK</b></span></a><a href="#biblioteka">Practices</a></div></header>
 <main class="wrap">
 <section class="hero" aria-labelledby="intro">
-  <div class="intro"><h1 id="intro">Kvėpavimo <span>praktika</span></h1><p>Pasirink kvėpavimo ritmą poilsiui, susikaupimui ar atsigavimui po treniruotės.</p></div>
+  <div class="intro"><h1 id="intro">Breathing <span>practice</span></h1><p>Find a breathing rhythm for relaxation, focus, or post-workout recovery.</p></div>
   <div class="player" id="seansas">
-    <div class="player-top"><span>DABARTINĖ PRAKTIKA</span><button id="sound" class="quiet" type="button" aria-pressed="false">Garsas išjungtas</button></div>
-    <div class="stage"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div id="orb"><span id="phase" aria-live="polite">Pasiruošk</span><strong id="clock">03:00</strong></div></div>
-    <h2 id="selection">Tolygus kvėpavimas</h2>
+    <div class="player-top"><span>CURRENT PRACTICE</span><button id="sound" class="quiet" type="button" aria-pressed="false">Sound off</button></div>
+    <div class="stage"><div class="ring"></div><div class="ring"></div><div class="ring"></div><div id="orb"><span id="phase" aria-live="polite">Get ready</span><strong id="clock">03:00</strong></div></div>
+    <h2 id="selection">Coherent Breathing</h2>
     <p id="instruction"></p>
-    <a id="practice-source" target="_blank" rel="noopener" hidden>Praktikos šaltinis ↗</a>
-    <div class="controls"><label><span class="sr-only">Apytikslė seanso trukmė</span><select id="duration"><option value="1">1 min.</option><option value="3" selected>3 min.</option><option value="5">5 min.</option><option value="10">10 min.</option></select></label><button id="toggle" type="button">Pradėti seansą</button><button id="reset" class="quiet" type="button" aria-label="Atkurti seansą" title="Atkurti seansą">↺</button></div>
+    <a id="practice-source" target="_blank" rel="noopener" hidden>Practice source ↗</a>
+    <div class="controls"><label><span class="sr-only">Approximate session length</span><select id="duration"><option value="1">1 min</option><option value="3" selected>3 min</option><option value="5">5 min</option><option value="10">10 min</option></select></label><button id="toggle" type="button">Start session</button><button id="reset" class="quiet" type="button" aria-label="Reset session" title="Reset session">↺</button></div>
   </div>
 </section>
-<section id="biblioteka" aria-labelledby="lib-title"><div class="section-head"><h2 id="lib-title">Pratimų biblioteka</h2><div class="filters" id="filters" aria-label="Pratimų kategorijos"></div></div><div id="cards" class="cards"></div></section>
-<details class="safety"><summary>Praktikos sauga ir šaltiniai</summary><p>Praktikuok sėdėdamas arba gulėdamas. Kvėpuok be įtampos. Jei svaigsta galva, trūksta oro ar jauti diskomfortą, sustok ir grįžk prie įprasto kvėpavimo. Kvėpavimo sulaikymo ir intensyvių praktikų venk vandenyje, prie vandens ir vairuodamas. Jei turi širdies ar plaučių sutrikimų, prieš bandydamas pasitark su sveikatos priežiūros specialistu.</p><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/36630953/">Kvėpavimo ritmų tyrimas („Cell Reports Medicine“)</a></li><li><a href="https://www.nhsinform.scot/healthy-living/mental-wellbeing/breathing-and-relaxation-exercises/belly-breathing-exercise/">Diafragminis kvėpavimas („NHS inform“)</a></li><li><a href="https://www.wimhofmethod.com/faq">Oficiali „Wim Hof Method“ saugos informacija</a></li></ul></details>
+<section id="biblioteka" aria-labelledby="lib-title"><div class="section-head"><h2 id="lib-title">Practice library</h2><div class="filters" id="filters" aria-label="Practice categories"></div></div><div id="cards" class="cards"></div></section>
+<details class="safety"><summary>Practice safety and sources</summary><p>For guided sessions, sit or lie down and breathe without straining. If you feel dizzy, short of breath, or uncomfortable, stop and return to normal breathing. Avoid breath holds and intensive practices in or near water and while driving. If you have a heart or lung condition, talk to a healthcare professional before trying these exercises.</p><ul><li><a href="https://pubmed.ncbi.nlm.nih.gov/36630953/">Study of structured breathing practices (Cell Reports Medicine)</a></li><li><a href="https://www.nhsinform.scot/healthy-living/mental-wellbeing/breathing-and-relaxation-exercises/belly-breathing-exercise/">Diaphragmatic breathing (NHS inform)</a></li><li><a href="https://www.wimhofmethod.com/faq">Official Wim Hof Method safety information</a></li></ul></details>
 </main>
 <footer class="wrap">Thompson Breathwork</footer>
-<dialog id="details" aria-labelledby="detail-title"><form method="dialog"><button class="quiet close" aria-label="Uždaryti">×</button></form><h2 id="detail-title"></h2><p id="detail-text"></p><a id="detail-link" target="_blank" rel="noopener">Skaityti šaltinį ↗</a></dialog>
+<dialog id="details" aria-labelledby="detail-title"><form method="dialog"><button class="quiet close" aria-label="Close">×</button></form><h2 id="detail-title"></h2><p id="detail-text"></p><a id="detail-link" target="_blank" rel="noopener">Read the source ↗</a></dialog>
 </body>
 </html>
